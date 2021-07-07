@@ -1,0 +1,32 @@
+//Team Hotel
+//Subdivision Class
+import java.util.ArrayList;
+public class Subdivision {
+    private ArrayList<House> houses = new ArrayList<House>();
+    
+    public Subdivision() {
+    }    
+    public boolean add(House h) {
+        return houses.add(h);
+    }
+    public House get(int i) {
+        return houses.get(i);
+    }
+    public ArrayList<House> list() {
+        return houses;
+    }
+    public int size() {
+        return houses.size();
+    }
+    public House find(String target) {
+        for (int i = 0; i<houses.size();) {
+            House test = houses.get(i);
+            if (test.getStyle() == target) {
+                return houses.get(i);
+            } else {
+                return null;
+            }
+        }
+        return null;
+    }
+}
