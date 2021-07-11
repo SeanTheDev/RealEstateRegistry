@@ -9,12 +9,16 @@ public class Subdivision {
     private ArrayList<House> housesByArea = new ArrayList<House>();
     private ArrayList<House> housesByPlot = new ArrayList<House>();
 
-
+    //no-arg constructor
     public Subdivision() {
-    }    
+    }   
+    
+    //mutator method
     public boolean add(House h) {
     	return houses.add(h);
     }
+    
+    //accessor methods
     public House get(int i) {
     	return houses.get(i);
     }
@@ -24,6 +28,7 @@ public class Subdivision {
     public int size() {
     	return houses.size();
     }
+    //search method
     public House find(String target) {
     	for (int i = 0; i<houses.size();) {
     		House test = houses.get(i);
@@ -35,6 +40,8 @@ public class Subdivision {
     	}
 		return null;
     }
+    
+    //returns results within range by Area
     public ArrayList<House> listByArea(double floor, double ceiling) {
     	for (int i=0; i<houses.size(); i++) {
     		if ((houses.get(i).getTotalArea() >= floor) && (houses.get(i).getTotalArea() <= ceiling))
@@ -42,6 +49,8 @@ public class Subdivision {
     	}
     	return housesByArea;
     }
+    
+    //returns results within range by Plot size
     public ArrayList<House> listByPlot(double floor, double ceiling)  {
     	for (int i=0; i<houses.size(); i++) {
     		if ((houses.get(i).getPlot() >= floor) && (houses.get(i).getPlot() <= ceiling))
@@ -49,6 +58,8 @@ public class Subdivision {
     	}
     	return housesByPlot;
     }
+    
+    //Sorts by area using selection sort method
     public ArrayList<House> sortByArea() {
 
     	for (int i = 0; i < houses.size(); i++) {
@@ -66,9 +77,9 @@ public class Subdivision {
     	      Collections.swap(houses, i, currentMinIndex);
     	      }
     	    return houses;  
-    	    }
+    }
 
-    	   	
+    //Sorts by plot size using selection sort method	   	
     public ArrayList<House> sortByPlot() {
     	for (int i = 0; i < houses.size(); i++) {
   	      // Find the minimum in the list[i..list.length-1]
