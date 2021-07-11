@@ -13,11 +13,8 @@ public class StringSet extends ArrayList<String>{
 	
 	//mutators
 	public boolean add(String newStr) {
-		if (stringArray.size() > 10)
-			return false;
-		else
-			stringArray.add(newStr);
-			return true;
+		stringArray.add(newStr);
+		return true;
 	}
 	public void pop() {
 		if (stringArray.size() != 0)
