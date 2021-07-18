@@ -61,7 +61,7 @@ public class House {
 		"\nFamilyRoom Area: " + getFamilyRoomArea() +
 		"\nLivingRoom Area: " + getLivingRoomArea() +
 		"\nPlot: " + getPlot() +
-		"\nSquare Feet: " + getTotalArea();
+		"\nSquare Feet: " + getTotalArea() + "\n";
 	}
 	
 	//Mutator Methods
