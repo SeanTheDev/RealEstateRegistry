@@ -124,16 +124,14 @@ public class Subdivision {
     	Scanner input;
         try {
             input = new Scanner(new File("subdivision.txt"));
-            while (input.hasNext()) {
-                String line = input.nextLine();
-                String[] tokens = line.split(",");
-                
-                System.out.println("Style: " + tokens[0] +
-                        "\nFamily Room Area: " + tokens[1] + 
-                        "\nLiving Room Area: " + tokens[2] +
-                        "\nNumber Of Bedrooms: " + tokens[3] +
-                        "\nPlot Size: " + tokens[4]);
-                System.out.println();
+			
+		for (int i = 0; input.hasNext(); i++) {
+		    String line = input.nextLine();
+		    String[] tokens = line.split(",");
+
+		    House newHouse = new House(tokens[0], Double.valueOf(tokens[1]), Double.valueOf(tokens[2]), Integer.valueOf(tokens[3]), Double.valueOf(tokens[4]));
+		    houses.remove(i);
+		    houses.add(i, newHouse);
             }
             
             input.close();
