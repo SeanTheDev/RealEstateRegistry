@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
+
 	public static void main(String[] args) {
 		Scanner input = new Scanner (System.in);
 	    int choice;
@@ -31,7 +33,8 @@ public class Menu {
 	          }
 	        else if (choice == 1)
 	          {
-	            System.out.println (subdivision.list());
+	            System.out.println("\nThe current houses in the subdivision are...\n");
+	        	showSubdivision(subdivision.list());
 	          }
 	        else if (choice == 2)
 	          {
@@ -39,6 +42,8 @@ public class Menu {
 	            
 	            System.out.println("House Style: ");
 	            String houseStyle = input.next();
+	            input.nextLine();
+	          
 	            		
 	            System.out.println("Family Room Area: ");
 	            double familyRoomArea = input.nextDouble();
@@ -67,7 +72,7 @@ public class Menu {
 	            int index = input.nextInt();
 	            
 	            System.out.println("Enter the new style of the house: ");
-	            String newStyle = input.nextLine();
+	            String newStyle = input.next();
 	            
 	            subdivision.get(index).setStyle(newStyle);
 	          }
@@ -78,7 +83,9 @@ public class Menu {
 	            System.out.println ("Enter maximum area: ");
 	            double max = input.nextDouble();
 	            
-	            System.out.println(subdivision.listByArea(min, max));
+	            System.out.println("\nThe following houses fit the search criteria (blank if none): ");
+	            showSubdivision(subdivision.listByArea(min, max));
+	            System.out.println();
 	          }
 	        else if (choice == 6) {
 	        	System.out.println ("Enter minimum plot size: ");
@@ -86,13 +93,15 @@ public class Menu {
 	            System.out.println ("Enter maximum plot size: ");
 	            double max = input.nextDouble();
 	            
-	            System.out.println(subdivision.listByPlot(min, max));
+	            System.out.println("\nThe following houses fit the search criteria (blank if none): ");
+	            showSubdivision(subdivision.listByPlot(min, max));
+	            System.out.println();
 	        }	        
 	        else if (choice == 7) {
-	        	System.out.println(subdivision.sortByArea());
+	        	showSubdivision(subdivision.sortByArea());
 	        }
 	        else if (choice == 8) {
-	        	System.out.println(subdivision.sortByPlot());
+	        	showSubdivision(subdivision.sortByPlot());
 	        }
 	        else if (choice == 9) {
 	        	subdivision.toDisk();
@@ -104,6 +113,19 @@ public class Menu {
 	     }
 	    while (choice!=0);
 	    input.close();
+	}
+	
+//Menu Class// Display Method (Hint)
+	private static void showSubdivision(ArrayList<House> subdivisionToShow) {
+		for (int i = 0; i < subdivisionToShow.size(); i++) {
+			System.out.println("Style: " + subdivisionToShow.get(i).getStyle() +
+					"\nFamilyRoom Area: " + subdivisionToShow.get(i).getFamilyRoomArea() +
+					"\nLivingRoom Area: " + subdivisionToShow.get(i).getLivingRoomArea() +
+					"\nNumber of Bedrooms: " + subdivisionToShow.get(i).getBedrooms() +
+					"\nSquare Footage: " + subdivisionToShow.get(i).getTotalArea() +
+					"\n");
+
+		}
 	}
 	
 }
