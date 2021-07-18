@@ -130,7 +130,6 @@ public class Subdivision {
 		    String[] tokens = line.split(",");
 
 		    House newHouse = new House(tokens[0], Double.valueOf(tokens[1]), Double.valueOf(tokens[2]), Integer.valueOf(tokens[3]), Double.valueOf(tokens[4]));
-		    houses.remove(i);
 		    houses.add(i, newHouse);
             }
             
