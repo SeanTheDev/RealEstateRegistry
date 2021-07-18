@@ -56,12 +56,12 @@ public class House {
 	
 	//Returns House attributes
 	public String toString() {
-		return "\nStyle: " + getStyle() +
-		"\nBedrooms: " + getBedrooms() +
-		"\nFamilyRoom Area: " + getFamilyRoomArea() +
-		"\nLivingRoom Area: " + getLivingRoomArea() +
-		"\nPlot: " + getPlot() +
-		"\nSquare Feet: " + getTotalArea() + "\n";
+		return "House Style = " + getStyle() +
+		" Bedrooms = " + getBedrooms() +
+		" FamilyRoom Area = " + getFamilyRoomArea() +
+		" LivingRoom Area = " + getLivingRoomArea() +
+		" Plot = " + getPlot() +
+		" Square Feet = " + getTotalArea();
 	}
 	
 	//Mutator Methods
