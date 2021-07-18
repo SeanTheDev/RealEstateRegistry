@@ -149,4 +149,8 @@ public class Subdivision {
     		houses.remove(position);
     		houses.add(position, houseToUpdate);
     }
+	
+    public String toString() {
+    	return houses.toString();
+    }
 }
