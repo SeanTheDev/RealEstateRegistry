@@ -32,15 +32,13 @@ public class Menu {
 	        else if (choice == 1)
 	          {
 	            System.out.println (subdivision.list());
-
-	            System.out.println ("Press any key and then enter to continue");
-	            choice = input.nextInt();
 	          }
 	        else if (choice == 2)
 	          {
 	            System.out.println ("Enter the House values as follows: ");
+	            
 	            System.out.println("House Style: ");
-	            String houseStyle = input.nextLine();
+	            String houseStyle = input.next();
 	            		
 	            System.out.println("Family Room Area: ");
 	            double familyRoomArea = input.nextDouble();
@@ -56,18 +54,12 @@ public class Menu {
 	            
 	            House newHouse = new House(houseStyle, familyRoomArea, livingRoomArea, numberOfBedrooms, plotArea);
 	            subdivision.add(newHouse);
-	            
-	            System.out.println ("Press any key and then enter to continue");
-	            choice = input.nextInt();
 	          }
 	        else if (choice == 3)
 	          {
 	            System.out.println ("Enter the position of the house to be deleted: ");
 	            int delete = input.nextInt();
 	            subdivision.remove(delete);
-	            
-	            System.out.println ("Press any key and then enter to continue");
-	            choice = input.nextInt();
 	          }
 	        else if (choice == 4)
 	          {
@@ -78,9 +70,6 @@ public class Menu {
 	            String newStyle = input.nextLine();
 	            
 	            subdivision.get(index).setStyle(newStyle);
-	            
-	            System.out.println ("Press any key and then enter to continue");
-	            choice = input.nextInt();
 	          }
 	        else if (choice == 5)
 	          {
@@ -90,9 +79,6 @@ public class Menu {
 	            double max = input.nextDouble();
 	            
 	            System.out.println(subdivision.listByArea(min, max));
-	            
-	            System.out.println ("Press any key and then enter to continue");
-	            choice = input.nextInt();
 	          }
 	        else if (choice == 6) {
 	        	System.out.println ("Enter minimum plot size: ");
@@ -101,36 +87,23 @@ public class Menu {
 	            double max = input.nextDouble();
 	            
 	            System.out.println(subdivision.listByPlot(min, max));
-	            
-	            System.out.println ("Press any key and then enter to continue");
-	            choice = input.nextInt();
 	        }	        
 	        else if (choice == 7) {
 	        	System.out.println(subdivision.sortByArea());
-	        	
-	            System.out.println ("Press any key and then enter to continue");
-	            choice = input.nextInt();
 	        }
 	        else if (choice == 8) {
 	        	System.out.println(subdivision.sortByPlot());
-	        	
-	            System.out.println ("Press any key and then enter to continue");
-	            choice = input.nextInt();
 	        }
 	        else if (choice == 9) {
 	        	subdivision.toDisk();
-	        	
-	            System.out.println ("Press any key and then enter to continue");
-	            choice = input.nextInt();
 	        }
 	        else
 	          {
 	            System.out.println ("Wrong Selection !!");
 	          }
 	     }
-	    while (choice >= 1 && choice <= 5);
+	    while (choice!=0);
 	    input.close();
 	}
 	
 }
-		
